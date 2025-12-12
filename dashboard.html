@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posture Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+            background: #f0f0f0;
+        }
+        #container {
+            display: flex;
+            gap: 20px;
+        }
+        #graphs {
+            flex: 3;
+        }
+        #logs {
+            flex: 1;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            height: 600px;
+            overflow-y: scroll;
+            font-size: 14px;
+        }
+        canvas {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Posture Monitoring Dashboard</h1>
+<p>Live updates from ESP32</p>
+
+<div id="container">
+    <div id="graphs">
+        <h2>Tilt Angle (°)</h2>
+        <canvas id="angleChart" width="600" height="300"></canvas>
+
+        <h2>Light Sensor</h2>
+        <canvas id="lightChart" width="600" height="300"></canvas>
+    </div>
+
+    <div id="logs">
+        <h3>Event Log</h3>
+        <div id="logBox"></div>
+    </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Our dashboard logic -->
+<script src="dashboard.js"></script>
+
+</body>
+</html>
